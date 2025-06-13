@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Feedback Form</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+    #bgVideo {
+      position:fixed;
+      min-width: 100%;
+      min-height: 100%;
+      
+    }
+    .formbox {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px #030303;
+      width: 400px;
+      color: rgb(246, 242, 242);
+    }
+    .formbox h1 {
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 15px;
+      border: 1px solid #030303;
+      border-radius: 10px;
+      background-color: #fff;
+      color: rgb(251, 248, 248);
+    }
+    button {
+      background: #07f03d;
+      color: #060606;
+      cursor: pointer;
+      border: none;
+    }
+    .message {
+      margin-top: 10px;
+      color: #00ff99;
+      text-align: center;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<video autoplay muted loop id="bgVideo">
+  <source src="c:\Users\HARISH C\Downloads\Abstract Futuristic Hexagons 4K Surface Motion Background Loop Sci-fi technology Blue Neon Light - Free Motion Background Loop (1080p, h264).mp4">
+</video>
+<div class="formbox">
+  <h1>Feedback</h1>
+  <form id="feedbackForm">
+    <label><b>Name: </b>
+    <input type="text" id="name" placeholder="*Enter your Name" required>
+    </label>
+    <label><b>Email:</b>
+    <input type="email" id="email" placeholder="*Enter your Email id" required>
+    </label>
+    <label><b>Comment:</b>
+    <textarea id="comment" placeholder="*Your Feedback" required></textarea>
+    </label>
+    <label><b>Phone no:</b>
+    <input type="tel" id="phone" placeholder="Phone (optional)">
+    </label>
+    <button type="submit">Submit</button>
+    <div class="message" id="msg">Thanks for your feedback!</div>
+  </form>
+</div>
+<script>
+  document.getElementById("feedbackForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const comment = document.getElementById("comment").value.trim();
+    if (name && email && comment) {
+      document.getElementById("msg").style.display = "block";
+      this.reset();
+    }
+  });
+</script>
+</body>
+</html>
+
+
+
+
+
